@@ -1,4 +1,4 @@
-const Produtos = [
+const PRODUTOS = [
     {
         id : "01",
         nome : "Caderno Escolar 10 Matérias",
@@ -11,28 +11,28 @@ const Produtos = [
         nome : "Pou",
         marca: "Tilibra",
         valor : "Gratuito",
-        imagem : "pou.png"
+        imagem : "caderno10.jpg"
     },
     {
         id : "03",
         nome : "Pokemon Go",
         marca: "Tilibra",
         valor : "Gratuito",
-        imagem : "pokemon.jpg"
+        imagem : "caderno10.jpg"
     },
     {
         id : "04",
         nome : "UNO!",
         marca: "Tilibra",
         valor : "R$9,99",
-        imagem : "uno.png"
+        imagem : "caderno10.jpg"
     },
     {
         id : "05",
         nome : "Brawl Stars",
         marca: "Tilibra",
         valor : "R$19,00",
-        imagem : "brawl.png"
+        imagem : "caderno10.jpg"
     }
 ]
-export default Produtos;
+export default PRODUTOS;
