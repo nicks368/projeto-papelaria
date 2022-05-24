@@ -4,48 +4,59 @@ import {Ionicons, AntDesign, MaterialIcons, EvilIcons,
     Entypo, Feather, FontAwesome, Fontisto, FontAwesome5, Zocial,
     Foundation, Octicons, MaterialCommunityIcons, SimpleLineIcons} from '@expo/vector-icons';
 
-export default function Produtos(nome, imagem, desc){
+export default function Produtos({nome, imagem, valor}){
     return(
         <TouchableOpacity style={estilo.containerProduto}>
+            <Text style={estilo.nome}>{nome}</Text>
             <Image
                 style={estilo.images}
                 source={require(`../../imagens/${imagem}`)}
             />
     
-            <Text style={estilo.titulo}>{nome}</Text>
-            <Text style={estilo.valor}>{desc}</Text>
+            
+            <Text style={estilo.valor}>{valor}</Text>
         </TouchableOpacity>
     )
 }
 const estilo = StyleSheet.create({
     containerProduto:{
-        backgroundColor: '#EAEAEA',
+        backgroundColor: '#fff',
         borderRadius: 10,
-        marginTop: 8,
+        marginTop: 20,
         padding: 10,
-        margin: 2,
-        alignItems: 'center',
+        margin: 2, 
         justifyContent: 'space-between',
-        width: 100,
-        height: 150,
+        width: 180,
+        height: 210,
         marginLeft: 8,
-        marginBottom: 5,
+        marginBottom: 25,
+        shadowRadius: 8,
+        shadowColor: 'black'
+        
     },
+
     nome: {
         color:'black',
-        fontSize: 14,
-        fontWeight:'bold',
+        fontSize: 16,
+        fontWeight:'normal',
+        textAlign: 'left',
+        fontFamily: 'Arial'
     },
+
     valor: {
-        color:'green',
+        color:'#105F4E',
         fontSize: 12,
-        marginLeft: 29,
+        marginLeft: 110,
         marginTop: 2,
         fontWeight:'bold',
     },
+
     images: {
-        width: '100%',
-        height: 75,
+        width: '70%',
+        height: '60%',
         borderRadius: 3,
+        marginBottom: 10,
+        marginTop: 10,
+        alignSelf: 'center'
     },
 })

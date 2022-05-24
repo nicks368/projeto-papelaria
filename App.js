@@ -1,29 +1,71 @@
 
-import { FlatList, StyleSheet, Text, View, Lis } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import Cabecalho from "./src/components/cabecalho";
 import Botao from "./src/components/botao";
 import Produtos from "./src/components/produtos";
-import Dados from "./dados/produtos"
+import DadosCadernos from "./dados/cadernos";
+import DadosLapis from "./dados/lapis";
+
 
 export default function Papelaria (){
   return(
     <View style={{backgroundColor:'#fff', flex:1}}>
       <Cabecalho/>
-      <View>
-        <FlatList> 
-          horizontal = {true}
-          data = {Dados}
-          keyExtractor = {(item) => item.id}
-          renderItem = { ({ item }) => (
+      
+      <Text style={texto.titulo}> Cadernos </Text>
 
-          <Produtos
-          nome = {item.nome}
-          imagem = {item.imagem}
-          desc = {item.marca}
-          />
-          )}
-        </FlatList>
+      <View>
+        <FlatList
+        horizontal = {true}
+        data = {DadosCadernos}
+        keyExtractor = {(item) => item.id}
+        renderItem = { ({ item }) => (
+
+        <Produtos
+        imagem = {item.imagem}
+        nome = {item.nome}
+        valor = {item.valor}
+        />
+        )}
+
+        />
       </View>
+
+      <Text style={texto.titulo}> Lápis </Text>
+      
+      <View>
+        <FlatList
+        horizontal = {true}
+        data = {DadosLapis}
+        keyExtractor = {(item) => item.id}
+        renderItem = { ({ item }) => (
+
+        <Produtos
+        imagem = {item.imagem}
+        nome = {item.nome}
+        valor = {item.valor}
+        />
+        )}
+
+        />
+      </View>
+
     </View>
   )
 }
+
+const texto = StyleSheet.create({
+  titulo: {
+      color:'white',
+      fontSize: 24,
+      fontWeight:'normal',
+      fontFamily: 'Lucky Skirt (DEMO).ttf',
+      textAlign: 'center',
+      textTransform: 'uppercase',
+      backgroundColor: '#1D5B4C',
+      width: 180,
+      borderRadius: 10,
+      alignSelf: 'center',
+  },
+
+})
