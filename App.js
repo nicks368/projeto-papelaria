@@ -5,6 +5,8 @@ import Botao from "./src/components/botao";
 import Produtos from "./src/components/produtos";
 import DadosCadernos from "./dados/cadernos";
 import DadosLapis from "./dados/lapis";
+import DadosEstojos from "./dados/estojos";
+import DadosDiversos from "./dados/diversos";
 
 
 export default function Papelaria (){
@@ -37,6 +39,44 @@ export default function Papelaria (){
         <FlatList
         horizontal = {true}
         data = {DadosLapis}
+        keyExtractor = {(item) => item.id}
+        renderItem = { ({ item }) => (
+
+        <Produtos
+        imagem = {item.imagem}
+        nome = {item.nome}
+        valor = {item.valor}
+        />
+        )}
+
+        />
+      </View>
+
+      <Text style={texto.titulo}> Estojos </Text>
+      
+      <View>
+        <FlatList
+        horizontal = {true}
+        data = {DadosEstojos}
+        keyExtractor = {(item) => item.id}
+        renderItem = { ({ item }) => (
+
+        <Produtos
+        imagem = {item.imagem}
+        nome = {item.nome}
+        valor = {item.valor}
+        />
+        )}
+
+        />
+      </View>
+
+      <Text style={texto.titulo}> Diversos </Text>
+      
+      <View>
+        <FlatList
+        horizontal = {true}
+        data = {DadosDiversos}
         keyExtractor = {(item) => item.id}
         renderItem = { ({ item }) => (
 
